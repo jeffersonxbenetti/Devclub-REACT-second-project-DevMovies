@@ -17,6 +17,41 @@ export const Background = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+`
+
+export const Container = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+`
+
+export const Info = styled.div`
+    z-index: 2;
+    padding: 1.25rem;
+    width: 50%;
+
+    h1 {
+        color: #fff;
+        font-size: 3.44rem;
+        font-weight: 700;
+    }
+
+    p {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+    }
+`
+
+export const Poster = styled.div`
+    z-index: 2;
+
+    img {
+        width: 19rem;
+        border-radius: 1.8rem;
     }
 `
