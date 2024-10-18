@@ -44,7 +44,13 @@ export const Info = styled.div`
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5rem;
+        margin: 1.25rem 0 2.5rem;
     }
+`
+
+export const ContainerButtons = styled.div`
+    display: flex;
+    gap: 1.25rem;
 `
 
 export const Poster = styled.div`
