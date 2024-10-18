@@ -15,7 +15,7 @@ function Home() {
         }
 
         getMovies()
-    }, [movie])
+    }, [])
 
     console.log(movie)
 
