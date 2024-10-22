@@ -1,12 +1,14 @@
 import api from '../../services/api.js'
 import Button from '../../components/Button'
 import Slider from '../../components/Slider'
+import Modal from '../../components/Modal'
 import { getImages } from '../../utils/getImages.js'
 import { useState, useEffect } from 'react'
 import { Background, Container, Info, Poster, ContainerButtons } from './styles.js'
 
 function Home() {
 
+    const [showMoldal, setShowModal] = useState(false)
     const [movie, setMovie] = useState()
     const [topMovies, setTopMovies] = useState()
     const [topSeries, setTopSeries] = useState()
@@ -55,13 +57,14 @@ function Home() {
         <>
             {movie && (
                 <Background $img={getImages(movie.backdrop_path)}>
+                    { showMoldal && (<Modal movieId={movie.id} setShowModal={setShowModal} />)}
                     <Container>
                         <Info>
                             <h1>{movie.title}</h1>
                             <p>{movie.overview}</p>
                             <ContainerButtons>
-                                <Button red={true}>Assista Agora</Button>
-                                <Button red={false}>Assista o Trailer</Button>
+                                <Button red>Assista Agora</Button>
+                                <Button onClick={() => setShowModal(true)}>Assista o Trailer</Button>
                             </ContainerButtons>
                         </Info>
                         <Poster>
