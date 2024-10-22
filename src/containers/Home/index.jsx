@@ -1,4 +1,5 @@
 import api from '../../services/api.js'
+import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Button'
 import Slider from '../../components/Slider'
 import Modal from '../../components/Modal'
@@ -14,6 +15,8 @@ function Home() {
     const [topSeries, setTopSeries] = useState()
     const [popularSeries, setPopularSeries] = useState()
     const [topPeople, setTopPeople] = useState()
+
+    const navegation = useNavigate()
 
     useEffect(() => {
         async function getMovies() {
@@ -63,7 +66,7 @@ function Home() {
                             <h1>{movie.title}</h1>
                             <p>{movie.overview}</p>
                             <ContainerButtons>
-                                <Button red>Assista Agora</Button>
+                                <Button onClick={() => navegation(`/detalhe/${movie.id}`)} red>Assista Agora</Button>
                                 <Button onClick={() => setShowModal(true)}>Assista o Trailer</Button>
                             </ContainerButtons>
                         </Info>
