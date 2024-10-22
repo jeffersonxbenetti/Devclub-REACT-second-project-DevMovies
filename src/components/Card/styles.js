@@ -13,6 +13,8 @@ export const Container = styled.div`
     }
 
     h3 {
+        font-size: 1rem;
+        font-weight: 300;
         color: #fff;
         margin: 15px 0 0;
     }
