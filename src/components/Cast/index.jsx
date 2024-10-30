@@ -4,8 +4,6 @@ import { ListCast } from './styles.js'
 
 function Cast({cast}) {
 
-    console.log(cast)
-
     return (
         <ListCast>
             {
