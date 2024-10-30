@@ -1,4 +1,14 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const scale = keyframes`
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+`
+
 
 export const Background = styled.div`
     background-image: url(${props => props.$img});
@@ -10,6 +20,7 @@ export const Background = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     &::before {
         content: '';
@@ -19,6 +30,16 @@ export const Background = styled.div`
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
 `
 
@@ -60,5 +81,6 @@ export const Poster = styled.div`
     img {
         width: 19rem;
         border-radius: 1.8rem;
+        Animation: ${scale} 0.5s linear;
     }
 `
