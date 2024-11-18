@@ -6,7 +6,7 @@ function Cast({cast}) {
 
     return (
         <ListCast>
-            {
+            { cast &&
                 cast.slice(0,5).map((cast) => (
                     <li key={cast.id}>
                         <img src={getImages(cast.profile_path)} alt="Foto-do-ator-ou-atriz" />

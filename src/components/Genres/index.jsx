@@ -4,7 +4,7 @@ function Genres({detailsGenres}) {
     
     return (
         <ListGenres>              
-            {
+            { detailsGenres &&
                 detailsGenres.map((genres) => (
                     <li key={genres.id}>{genres.name}</li>
                 ))
